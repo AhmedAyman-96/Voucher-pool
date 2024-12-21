@@ -1,5 +1,7 @@
 # Voucher Pool Project
 
+![alt text](https://ibb.co/dW84RHZ)
+
 ## Overview
 
       This project is a Voucher Pool service built using **NestJS** and **TypeORM** with **PostgreSQL** as the database.
@@ -13,6 +15,7 @@
 - **TypeORM** - A powerful ORM for Node.js and TypeScript, used for interacting with PostgreSQL.
 - **PostgreSQL** - A relational database management system used for storing voucher, customer, and special offer data.
 - **Docker** - Containerization for easy deployment and setup of the application and its dependencies.
+- **SwaggerUI** - A documentation tool for documenting this application endpoint.
 
 ## Installation
 
@@ -32,7 +35,13 @@ npm install
 
       You need to set up the following environment variables in your `.env` file:
 
-- `DATABASE_URL` - The PostgreSQL database connection string (e.g., **postgresql://username:password@host:port/database**).
+- `DB_HOST` - The PostgreSQL database host ip
+- `DB_PORT` - The PostgreSQL database port
+- `DB_NAME` - The PostgreSQL database name
+- `DB_USER` - The PostgreSQL database username
+- `DB_PASSWORD` - The PostgreSQL database password
+- `NODE_ENV` - Your current env (e.g., **development**).
+- `PORT` - Your current application port (e.g., **5000**).
 
 ### Docker Setup:
 
@@ -54,7 +63,7 @@ npm run start:dev
 
 ### Generate Voucher
 
-      **POST** /vouchers/generate
+      [POST] /vouchers/generate
 
       Generate a voucher for a specific customer and offer.
 
@@ -72,7 +81,7 @@ npm run start:dev
 
 ### Validate Voucher
 
-      **POST** /vouchers/validate
+      [POST] /vouchers/validate
 
       Validate a voucher code for a customer.
 
@@ -89,19 +98,19 @@ npm run start:dev
 
 ### Get Vouchers for Customer
 
-      **GET** /vouchers/customer/:email
+      [GET] /vouchers/customer/:email
 
       Retrieve all valid vouchers for a specific customer.
 
 ### Get All Customers
 
-      **GET** /customers
+      [GET] /customers
 
       Retrieve all customers in the database. This endpoint is only for observation purposes and does not allow any modification of customer records.
 
 ### Get All Offers
 
-      **GET** /offers
+      [GET] /offers
 
       Retrieve all special offers in the database. This endpoint is only for observation purposes and does not allow any modification of offer records.
 
