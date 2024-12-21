@@ -1,5 +1,7 @@
 # Voucher Pool Project
 
+![alt text](https://github.com/AhmedAyman-96/Voucher-pool/blob/main/ERD/ERD.png)
+
 ## Overview
 
 This project is a Voucher Pool service built using **NestJS** and **TypeORM** with **PostgreSQL** as the database.
