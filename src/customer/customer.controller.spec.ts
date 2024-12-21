@@ -1,9 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CustomerController } from './customer.controller';
 import { CustomerService } from './customer.service';
-import { getRepositoryToken } from '@nestjs/typeorm';
-import { Customer } from './models/customer.model';
-import { Repository } from 'typeorm';
 
 describe('CustomerController', () => {
   let controller: CustomerController;

@@ -1,13 +1,10 @@
 # Voucher Pool Project
 
-![alt text](https://github.com/AhmedAyman-96/Voucher-pool/blob/main/ERD/ERD.png)
-
 ## Overview
 
-      This project is a Voucher Pool service built using **NestJS** and **TypeORM** with **PostgreSQL** as the database.
-      The application provides an API for managing voucher codes, customers, and special offers.
-
-      The project uses **Docker** for containerization, making it easy to set up the application with all its dependencies.
+This project is a Voucher Pool service built using **NestJS** and **TypeORM** with **PostgreSQL** as the database.
+The application provides an API for managing voucher codes, customers, and special offers.
+The project uses **Docker** for containerization, making it easy to set up the application with all its dependencies.
 
 ## Technologies Used
 
@@ -22,7 +19,7 @@
 ### Clone the repository:
 
 ```
-git clone https://github.com/your-username/voucher-pool.git
+git clone https://github.com/AhmedAyman-96/Voucher-pool
 ```
 
 ### Install dependencies:
@@ -33,7 +30,7 @@ npm install
 
 ### Set up environment variables:
 
-      You need to set up the following environment variables in your `.env` file:
+You need to set up the following environment variables in your `.env` file:
 
 - `DB_HOST` - The PostgreSQL database host ip
 - `DB_PORT` - The PostgreSQL database port
@@ -45,13 +42,13 @@ npm install
 
 ### Docker Setup:
 
-      To run the application using Docker, ensure you have Docker installed on your machine. You can use the following commands to build and run the Docker containers:
+To run the application using Docker, ensure you have Docker installed on your machine. You can use the following commands to build and run the Docker containers:
 
 ```
 docker-compose up --build
 ```
 
-      This command will set up the PostgreSQL database and the application in containers.
+This command will set up the PostgreSQL database and the application in containers.
 
 ### Run the application:
 
@@ -142,29 +139,21 @@ npm run start:dev
 
 ## Running Migrations
 
-      To run migrations, use the following command:
+#### To run migrations, use the following command:
 
 ```
 npm run migration:run
 ```
 
-      To generate a new migration, use:
+#### To generate a new migration, use:
 
 ```
-npm run migration:generate -- <migration-name></migration-name>
-```
-
-## Seeding the Database
-
-      To seed the database with initial customers and offers, use the following command:
-
-```
-npm run seed
+npm run migration:generate --name=<migration-name>
 ```
 
 ## Testing
 
-      Unit tests are written using Jest. To run the tests, use the following command:
+#### Unit tests are written using Jest. To run the tests, use the following command:
 
 ```
 npm run test
