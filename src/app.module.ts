@@ -6,9 +6,11 @@ import { VoucherModule } from './voucher/voucher.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppConfig, DatabaseConfig } from './config';
 import { SeederModule } from './seeder/seeder.module';
-import { ThrottlerModule } from '@nestjs/throttler';
+import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
 import { CustomerModule } from './customer/customer.module';
 import { OfferModule } from './offer/offer.module';
+import { APP_GUARD } from '@nestjs/core';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -16,7 +18,7 @@ import { OfferModule } from './offer/offer.module';
       //global throttling
       {
         ttl: 60000,
-        limit: 10,
+        limit: 100,
       },
     ]),
     ConfigModule.forRoot({
@@ -35,8 +37,15 @@ import { OfferModule } from './offer/offer.module';
     SeederModule,
     CustomerModule,
     OfferModule,
+    AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
+  ],
 })
 export class AppModule {}

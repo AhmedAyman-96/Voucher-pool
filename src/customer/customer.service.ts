@@ -9,6 +9,7 @@ export class CustomerService {
     @InjectRepository(Customer)
     private readonly customerRepository: Repository<Customer>,
   ) {}
+
   async getAllCustomers() {
     return this.customerRepository.find();
   }
