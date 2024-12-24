@@ -102,7 +102,7 @@ describe('VoucherService', () => {
       mockVoucherRepository.create.mockReturnValue(mockVoucher);
       mockVoucherRepository.save.mockResolvedValue(mockVoucher);
 
-      const expirationDate = new Date(Date.now() + 1000 * 60 * 60 * 24); // 1 day in the future
+      const expirationDate = new Date(Date.now() + 1000 * 60 * 60 * 24);
       const result = await service.generateVoucher(
         '123',
         'offer1',
@@ -258,12 +258,12 @@ describe('VoucherService', () => {
       const mockVouchers = [
         {
           code: 'VOUCH-1234',
-          expirationDate: new Date(Date.now() + 1000 * 60 * 60 * 24), // Future date
+          expirationDate: new Date(Date.now() + 1000 * 60 * 60 * 24),
           specialOffer: { name: 'Special Offer 1', discountPercentage: 10 },
         },
         {
           code: 'VOUCH-5678',
-          expirationDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 2), // Future date
+          expirationDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 2),
           specialOffer: { name: 'Special Offer 2', discountPercentage: 20 },
         },
       ];
@@ -305,12 +305,12 @@ describe('VoucherService', () => {
       const mockVouchers = [
         {
           code: 'VOUCH-1234',
-          expirationDate: new Date(Date.now() - 1000 * 60 * 60 * 24), // Past date
+          expirationDate: new Date(Date.now() - 1000 * 60 * 60 * 24),
           specialOffer: { name: 'Special Offer 1', discountPercentage: 10 },
         },
         {
           code: 'VOUCH-5678',
-          expirationDate: new Date(Date.now() + 1000 * 60 * 60 * 24), // Future date
+          expirationDate: new Date(Date.now() + 1000 * 60 * 60 * 24),
           specialOffer: { name: 'Special Offer 2', discountPercentage: 20 },
         },
       ];
