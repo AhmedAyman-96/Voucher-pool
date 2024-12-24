@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsUUID, IsDateString } from 'class-validator';
-import { Customer } from 'src/customer/models/customer.model';
-import { SpecialOffer } from 'src/offer/models/special-offer.model';
+import { Customer } from '../../customer/models/customer.model';
+import { SpecialOffer } from '../../offer/models/special-offer.model';
 
 export class CreateVoucherDto {
   @ApiProperty({

@@ -45,7 +45,7 @@ describe('VoucherService', () => {
       commitTransaction: jest.fn(),
       rollbackTransaction: jest.fn(),
       release: jest.fn(),
-    } as unknown as QueryRunner;
+    };
 
     mockDataSource = {
       createQueryRunner: jest.fn(() => mockQueryRunner),
